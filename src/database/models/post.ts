@@ -1,23 +1,23 @@
-import { DataTypes } from "sequelize";
+import {DataTypes} from "sequelize";
 import configDb from "../../core/db/db.config";
 
 const Post = configDb.define(
-  "Post",
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
+    "Post",
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+        },
+        title: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        description: {
+            type: DataTypes.TEXT,
+        },
     },
-    title: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    description: {
-      type: DataTypes.TEXT,
-    },
-  },
-  { tableName: "Posts" }
+    {tableName: "posts"}
 );
 
 export default Post;

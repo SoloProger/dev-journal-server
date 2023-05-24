@@ -3,15 +3,14 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
     async up(queryInterface, Sequelize) {
-        await queryInterface.createTable('posts', {
+
+        await queryInterface.createTable('roles', {
             id: {
                 type: Sequelize.DataTypes.INTEGER,
                 autoIncrement: true,
-                primaryKey: true
+                primaryKey: true,
             },
-            title: {type: Sequelize.DataTypes.STRING, allowNull: false},
-            description: {type: Sequelize.DataTypes.TEXT},
-            category_id: {type: Sequelize.DataTypes.INTEGER},
+            name: {type: Sequelize.DataTypes.STRING, allowNull: false},
             created_at: {
                 allowNull: false,
                 type: Sequelize.DataTypes.DATE,
@@ -20,16 +19,12 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.DataTypes.DATE,
             },
-        })
+        });
+
     },
 
     async down(queryInterface, Sequelize) {
-        /**
-         * Add reverting commands here.
-         *
-         * Example:
-         * await queryInterface.dropTable('users');
-         */
-        await queryInterface.dropTable('posts');
+
+        await queryInterface.dropTable('roles');
     }
 };

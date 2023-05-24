@@ -1,5 +1,5 @@
 import Role from "../models/role";
 import User from "../models/user";
 
-Role.hasMany(User);
-User.belongsTo(Role);
+User.hasOne(Role, {foreignKey: 'role_id'});
+Role.belongsTo(User);
