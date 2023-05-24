@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import configDb from "../core/db/db.config";
+import configDb from "../../core/db/db.config";
 
 const Role = configDb.define(
   "Role",

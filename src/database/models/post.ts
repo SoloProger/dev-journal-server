@@ -1,24 +1,23 @@
 import { DataTypes } from "sequelize";
-import configDb from "../core/db/db.config";
+import configDb from "../../core/db/db.config";
 
-const User = configDb.define(
-  "User",
+const Post = configDb.define(
+  "Post",
   {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    name: {
+    title: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    password: {
+    description: {
       type: DataTypes.TEXT,
-      allowNull: false,
     },
   },
-  { tableName: "Users" }
+  { tableName: "Posts" }
 );
 
-export default User;
+export default Post;

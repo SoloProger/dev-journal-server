@@ -1,11 +1,11 @@
-import { PostController } from "./post.controller";
+import { PostController } from "../controllers/post.controller";
 import { BaseHandler } from "../core/base/handler.base";
 import { PATHS } from "../core/utils/paths";
 import { BaseRepository } from "../core/base/repository.base";
 import { Model } from "sequelize";
-import { PostService } from "./post.service";
+import { PostService } from "../services/post.service";
 import createRoute from "../core/utils/createRoute";
-import Post from "./post";
+import Post from "../database/models/post";
 
 const router = (app: any) =>
   new BaseHandler(

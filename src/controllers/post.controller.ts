@@ -3,7 +3,7 @@ import { FastifyRequest, FastifyReply } from "fastify";
 import { AbstractController } from "../core/abstract/controller.abstract";
 import { AbstractRepository } from "../core/abstract/repository.abstract";
 import { Type } from "../core/types/type";
-import { PostService } from "./post.service";
+import { PostService } from "../services/post.service";
 import QueryParams from "../core/types/query-params";
 
 export class PostController extends AbstractController<any> {
