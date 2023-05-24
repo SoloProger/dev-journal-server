@@ -1,17 +1,17 @@
 import { Model } from "sequelize";
-import { PATHS } from "./../core/utils/paths";
-import { BaseHandler } from "../core/base/handler.base";
 import { BaseController } from "../core/base/controller.base";
-import { PostService } from "../post/post.service";
+import { BaseHandler } from "../core/base/handler.base";
 import { BaseRepository } from "../core/base/repository.base";
 import createRoute from "../core/utils/createRoute";
-import Role from "./role";
+import { PATHS } from "../core/utils/paths";
+import { PostService } from "../services/post.service";
+import User from "../database/models/user";
 
 const router = (app: any) =>
   new BaseHandler(
     app,
-    PATHS.ROLE_PATH,
-    Role as unknown as Model,
+    PATHS.USER_PATH,
+    User as unknown as Model,
     BaseController,
     PostService,
     BaseRepository
