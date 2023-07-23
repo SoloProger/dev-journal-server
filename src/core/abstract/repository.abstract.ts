@@ -1,4 +1,4 @@
-import { FindOptions, Model, Options } from "sequelize";
+import { FindOptions } from "sequelize";
 
 export abstract class AbstractRepository<T, Y> {
   protected abstract model: any;

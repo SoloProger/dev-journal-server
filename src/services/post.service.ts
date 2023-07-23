@@ -24,7 +24,7 @@ export class PostService extends AbstractService<any, any> {
   public async getRecentEntities() {
     const recentPosts = await this.repository.getAll({
       limit: 2,
-      order: [["createdAt", "DESC"]],
+      order: [["created_at", "DESC"]],
     });
     return recentPosts;
   }

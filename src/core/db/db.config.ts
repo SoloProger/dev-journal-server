@@ -7,6 +7,9 @@ const _config = {
   options: {
     host: process.env.DATABASE_HOST as string,
     dialect: process.env.DATABASE_TYPE as Dialect,
+    define: {
+      timestamps: false
+    }
   },
 };
 

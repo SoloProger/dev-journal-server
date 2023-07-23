@@ -8,7 +8,16 @@
     "build": "tsc",
     "start": "nodemon build/index.js",
     "server:start": "concurrently \" npm run build \" \"npm run start\"",
-    "server:watch": "nodemon --watch './**/*.ts' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' index.ts"
+    "server:watch": "nodemon --watch './**/*.ts' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' index.ts",
+    "migrate:make": "npx sequelize-cli migration:generate --name",
+    "migrate": "npx sequelize-cli db:migrate",
+    "unmigrate": "npx sequelize-cli db:migrate:undo",
+    "seed:make": "npx sequelize-cli seed:generate --name",
+    "seed": "npx sequelize-cli db:seed:all",
+    "seed:one": "npx sequelize-cli db:seed --seed",
+    "unseed": "npx sequelize-cli db:seed:undo:all",
+    "unseed:recent": "npx sequelize-cli db:seed:undo",
+    "unseed:one": "npx sequelize-cli db:seed:undo --seed"
   },
   "keywords": [],
   "author": "",
